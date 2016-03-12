@@ -345,3 +345,31 @@ and (max-width: 700px){
     }
 
 }
+@media screen
+and (max-width: 480px) {
+    .nav-header input {
+        padding: 8px 7px;
+        margin-left: 0;
+        display: block;
+        width: 90%;
+        font-size: 0.9em;
+        margin-top: 18px;
+    }
+    .fader-bg button {
+        padding: 10px 20px;
+        font-size: 0.9em;
+        margin-top: 29px;
+        margin-left: 0;
+        width: 94%%;
+        float: left!important;
+    }
+    select {
+        display: block;
+        font-size: 1.1em;
+        width:80%;
+    }
+    .fader-bg, h2 {
+        width: 95%;
+        padding: 10px 0px 15px 15px;
+    }
+}
