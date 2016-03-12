@@ -45,7 +45,7 @@ li {
 #wrap {
     display: block;
     position: relative;
-    margin: 0px auto;
+    margin: 0 auto;
     width: 100%;
     font-family: 'Lato', sans-serif;
     background: #FAFAFA;
@@ -55,7 +55,7 @@ li {
     background: #000;
     color: #FFF;
     font-size: 0.85em;
-    padding: 6px 0px;
+    padding: 6px 0;
     text-align: center;
     font-weight: lighter;
     letter-spacing: 1px;
@@ -360,7 +360,7 @@ and (max-width: 480px) {
         font-size: 0.9em;
         margin-top: 29px;
         margin-left: 0;
-        width: 94%%;
+        width: 94%;
         float: left!important;
     }
     select {
