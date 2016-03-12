@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html ng-app="app">
+    <head>
+        <meta charset="UTF-8">
+        <title>Homework Task App with Local Storage</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="Homework Task App with Local Storage">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="author" content="Joe Hoeller">
+        <!-- Meta for Live tiles for Windows -->
+        <meta name="msapplication-TileImage" content="tile-background.png">
+        <meta name="msapplication-TileColor" content="#FF0000">
+        <link rel="stylesheet" href="css/main.css" />
+        <link rel="stylesheet" href="css/font-awesome.min.css" />
+        <link href='https://fonts.googleapis.com/css?family=Lato:400,300' rel='stylesheet' type='text/css'>    <body>
+        <div id="wrap" ng-controller="Listr">
+
+            <header class="main-header">
+                <h1>Homework Task App with Local Database Storage</h1>
+                <div class="nav-header cf">
+                    <div class="fader-bg cf">
+                        <small><i class="fa fa-filter"></i>&nbsp;Filter by Subject</small>
+                        <select ng-model="f">
+                            <option value="">All Subjects</option>
+                            <option>Math</option>
+                            <option>English</option>
+                            <option>Reading</option>
+                            <option>Science</option>
+                            <option>History</option>
+                            <option>Geometry</option>
+                            <option>Social studies</option>
+                            <option>Art</option>
+                            <option>Misc</option>
+                        </select>
+                    </div>
+                    <div class="fader-bg addItem cf">
+                        <small><i class="fa fa-plus"></i></i>&nbsp;Add a Subject and Homework Task to Your List</small>
+                        <select ng-model="newSubject">
+                            <optgroup label="Choose a Subject"></optgroup>
+                            <option>Math</option>
+                            <option>English</option>
+                            <option>Reading</option>
+                            <option>Science</option>
+                            <option>History</option>
+                            <option>Geometry</option>
+                            <option>Social studies</option>
+                            <option>Art</option>
+                            <option>Misc</option>
+                        </select>
+                        <input type="text" placeholder="Add Homework Task" ng-model="newTitle">
+                        <button class="add" ng-click="addItem()">ADD</button>
+                    </div>
+                    <h2>
+                        <i class="fa fa-paperclip"> &nbsp; </i><em>{{studentName}}'s</em> Homework List
+                    </h2>
+                </div>
+            </header>
+            <div class="inner">
+                <h3>
+                    <i class="fa fa-graduation-cap"></i> My Homework Tasks
+                </h3>
+                <div class="list-header">
+                    <span class="subject-name">subject</span>
+                    <span class="task-job">task description</span>
+                    <span class="turn-in">date due</span>
+                </div>
+                <ul id="taskList">
+                    <li class="targetItem cf css3 intro" ng-repeat="collection in collections | filter: f as results track by $index">
+                        <div class="left cf">
+                            <strong class="count">{{$index + 1}}. </strong>
+                            <input id="IsCompleted" class="completed-task" type="checkbox" ng-model="todo.complete">
+                            <div class="task-{{todo.complete}}">
+                                <strong><em>{{collection.type}}: &nbsp; </em></strong>
+                                {{collection.listTitle}}
+                                <span>{{dateResult}}</span>
+                            </div>
+                            <strong class="subject"><em>{{collection.type}}:</em></strong>
+                            <span class="task-name">{{collection.listTitle}}</span>
+                            <span class="due-date">{{dateResult}}</span>
+                        </div>
+                        <button class="delete" ng-click="removeItem($index)"><i class="del fa fa-trash-o"></i> DELETE</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <script src="js/angular-1.4.8.js"></script>
+        <script src="js/homeworkTaskController.js"></script>
+    </body>
+</html>
