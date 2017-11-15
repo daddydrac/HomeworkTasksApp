@@ -1,1 +1,1 @@
-##Task App in Angular for kids
+##Task App in Angular - teaching code for kids
